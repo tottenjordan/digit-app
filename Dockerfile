@@ -23,9 +23,10 @@ WORKDIR /app
 
 #COPY app ./app
 
-RUN pip install --no-cache-dir -r app/requirements.txt
+RUN pip3 install --no-cache-dir -r app/requirements.txt
 
 # Expose port
+EXPOSE 8500
 # REST
 EXPOSE 8501
 
@@ -34,4 +35,4 @@ ENV MODEL_NAME=digits
 
 # RUN -p 8501:8501 -e MODEL_NAME=digits tensorflow/serving
 
-CMD ["python", "./appli.py"]
+CMD ["python3", "./appli.py"]
